@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+		window.onload = function () {
+			var l = document.getElementById('big');
+			var m = document.getElementById('mid');
+			var s = document.getElementById('small');
+
+			l.onclick = function () {
+				alert('l');
+			};
+			m.onclick = function () {
+				alert('m');
+			};
+			s.onclick = function() {
+				alert('s');
+			};
+		}
+	</script>
+</head>
+<body>
+	<div class="big" id="big">
+		<div class="mid" id="mid">
+			<div class="small" id="small"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.big{
+			width: 400px;
+			height: 400px;
+			background-color: blue;
+		}
+		.mid{
+			width: 300px;
+			height: 300px;
+			background-color: green;
+		}
+		.small{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+		window.onload = function () {
+			var l = document.getElementById('big');
+			var m = document.getElementById('mid');
+			var s = document.getElementById('small');
+			
+			// s.onclick = function(){
+			// 	alert('s');
+			// }
+			// m.onclick = function(){
+			// 	alert('m');
+			// }
+			// l.onclick = function(){
+			// 	alert('l');
+			// }
+			
+
+			bind(s,'click',function(e){ 
+				console.log('s');
+				alert('bind s')
+				if(typeof e.stopPropagation == 'function'){
+					// e.stopPropagation();
+				}else{
+					e.cancelBubble = true; 
+				}
+			},true);
+			
+			bind(m,'click',function(e){ 
+				console.log('m');
+				alert('bind m')
+				if(typeof e.stopPropagation == 'function'){
+					// e.stopPropagation();
+				}else{
+					e.cancelBubble = true; 
+				}
+			},true);
+			bind(l,'click',function(e){ 
+				console.log('l');
+				alert('bind l')
+				if(typeof e.stopPropagation == 'function'){
+					// e.stopPropagation();
+				}else{
+					e.cancelBubble = true; 
+				}
+			},true);
+		}
+
+		function bind(ele,eve,fn,caputre){
+			if(ele.addEventListener){
+				ele.addEventListener(eve,fn,caputre);
+			}else{
+				ele.attachEvent('on'+eve,fn);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="big" id="big">
+		<div class="mid" id="mid">
+			<div class="small" id="small"></div>
+		</div>
+	</div>
+</body>
+</html>
