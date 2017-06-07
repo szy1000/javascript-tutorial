@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		Array.prototype.sum = Array.prototype.sum || function(argument){
+			var result = 0;
+			for(var i =0; i<this.length;i++){
+				if(typeof this[i] === 'number'){
+					result += this[i];
+				}else{
+					console.log('Tips: ['+ this[i] + '] isn\'t Number!');
+				}
+			}
+			return result;
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
