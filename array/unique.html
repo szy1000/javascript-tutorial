@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var arr = [1,34,54,"op",2,4,1,4,5,65,32,224,34];
+		var tmp = [];
+
+		for(var i = 0; i < arr.length; i++){
+			if(isNaN(arr[i])){
+				console.error(arr[i]+"数组有错！已经过滤");
+				continue;
+			}
+			if(tmp.indexOf(arr[i]) == -1){
+				tmp.push(arr[i]);
+			}
+		}
+		console.log(tmp);
+
+		tmp.sort(sortNum);
+		console.log(tmp);
+
+		function sortNum(a,b) {
+			return a-b;
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
